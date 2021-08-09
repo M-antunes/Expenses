@@ -17,8 +17,13 @@ class ChartBar extends StatelessWidget {
     return Column(
       children: [
         Container(
-            height: 20,
-            child: FittedBox(child: Text('${value.toStringAsFixed(2)}'))),
+            height: 22,
+            decoration: BoxDecoration(
+                border: Border.all(color: AppColors.primary as Color)),
+            child: Padding(
+              padding: EdgeInsets.all(2),
+              child: FittedBox(child: Text('${value.toStringAsFixed(2)}')),
+            )),
         SizedBox(height: 5),
         Container(
           height: 60,
