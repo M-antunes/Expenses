@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:expenses/models/transaction.dart';
-import 'package:expenses/test/chart_test.dart';
 import 'package:expenses/themes/app_colors.dart';
 import 'package:expenses/themes/app_font_styles.dart';
 import 'package:expenses/widgets/chart.dart';
@@ -82,16 +81,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         actions: [
           IconButton(
-              icon: Icon(Icons.calendar_today_outlined,
-                  color: AppColors.whiteModel),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ChartTest(_recentTransactions),
-                  ),
-                );
-              }),
+            icon: Icon(Icons.add, color: AppColors.whiteModel),
+            onPressed: () => _openTransactionFormModal(context),
+          ),
         ],
       ),
       body: SingleChildScrollView(
